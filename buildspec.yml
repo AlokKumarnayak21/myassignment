@@ -3,10 +3,13 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Installing dependencies...
+      - echo "No dependencies to install"
+
   build:
     commands:
-      - echo Build started
+      - echo "Zipping deployment package"
+      - zip -r app.zip index.html appspec.yml scripts/
+
 artifacts:
   files:
-    - '**/*'
+    - app.zip
